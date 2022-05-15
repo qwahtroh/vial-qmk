@@ -30,6 +30,15 @@
 #define MATRIX_ROWS 1
 #define MATRIX_COLS 5
 
+#define POINTING_DEVICE_INVERT_Y
+
+#define PLOOPY_DPI_OPTIONS { 400, 800 }
+#define PLOOPY_DPI_DEFAULT 1
+
+#define PLOOPY_DRAGSCROLL_FIXED
+#define PLOOPY_DRAGSCROLL_DPI 100 // Fixed-DPI Drag Scroll
+#define PLOOPY_DRAGSCROLL_MOMENTARY
+#define PLOOPY_DRAGSCROLL_INVERT
 
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
 #define DEBOUNCE 5

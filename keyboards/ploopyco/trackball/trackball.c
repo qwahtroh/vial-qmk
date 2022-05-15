@@ -73,7 +73,7 @@ bool encoder_update_kb(uint8_t index, bool clockwise) {
         return false;
     }
 #ifdef MOUSEKEY_ENABLE
-    tap_code(clockwise ? KC_WH_U : KC_WH_D);
+    tap_code(clockwise ? KC_WH_U : KC_WH_D); 
 #else
     mouse_report_t mouse_report = pointing_device_get_report();
     mouse_report.v = clockwise ? 1 : -1;
@@ -81,6 +81,12 @@ bool encoder_update_kb(uint8_t index, bool clockwise) {
     pointing_device_send();
 #endif
     return true;
+}
+
+void process_wheel_user(report_mouse_t* mouse_report, int16_t h, int16_t v) {
+    if (is_drag_scroll) {
+    tap_code(clockwise ? KC_VOLU : KC_VOLD); 
+    }
 }
 
 void process_wheel(void) {
@@ -132,6 +138,8 @@ report_mouse_t pointing_device_task_kb(report_mouse_t mouse_report) {
 
     return pointing_device_task_user(mouse_report);
 }
+
+
 
 bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
     if (true) {
@@ -218,7 +226,7 @@ void keyboard_pre_init_kb(void) {
 }
 
 void pointing_device_init_kb(void) {
-    pmw3360_set_cpi(dpi_array[keyboard_config.dpi_config]);
+    pointing_device_set_cpi(dpi_array[keyboard_config.dpi_config]);
     // initialize the scroll wheel's optical encoder
     opt_encoder_init();
 }
