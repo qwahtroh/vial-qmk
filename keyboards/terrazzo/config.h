@@ -24,6 +24,7 @@
 #define DEVICE_VER      0x0002
 #define MANUFACTURER    MsMustard
 #define PRODUCT         Terrazzo
+#define VIAL_KEYBOARD_UID {0xE0, 0xA2, 0x6A, 0x24, 0x67, 0xDC, 0x0B, 0x1C}
 
 /* key matrix size */
 
@@ -32,12 +33,16 @@
 #define MATRIX_ROWS 9
 #define MATRIX_COLS 6
 
+
 /* key matrix pins */
 
 // SWAP FOR PRO MICRO
 // #define MATRIX_ROW_PINS { D2, D7, E6, B4, B5, B6, B2, B3 }
 #define MATRIX_ROW_PINS { D2, D7, E6, B4, B5, B6, B2, B3, F0 }
 #define MATRIX_COL_PINS { D3, F4, F5, F6, F7, B1 }
+
+#define DYNAMIC_KEYMAP_LAYER_COUNT 3
+#define VIAL_TAP_DANCE_ENTRIES 4
 
 #define UNUSED_PINS
 #define DIODE_DIRECTION COL2ROW
@@ -88,7 +93,7 @@ so there is only one configuration. */
 #define DRIVER_LED_TOTAL 105
 #define LED_MATRIX_ROWS 15
 #define LED_MATRIX_COLS 7
-#define LED_MATRIX_MAXIMUM_BRIGHTNESS 20
+#define LED_MATRIX_MAXIMUM_BRIGHTNESS 10
 #define LED_DISABLE_WHEN_USB_SUSPENDED
 
 // LED Matrix Animation modes. Explicitly enabled
@@ -121,9 +126,9 @@ so there is only one configuration. */
 /* Terrazzo animations */
 
 // #define DISABLE_TERRAZZO_EFFECT_STRIPES
-// #define DISABLE_TERRAZZO_EFFECT_DINO
-// #define DISABLE_TERRAZZO_EFFECT_OUTRUN
-#define DISABLE_TERRAZZO_EFFECT_PAC_DUDE
-#define DISABLE_TERRAZZO_EFFECT_HEART
-// #define DISABLE_TERRAZZO_EFFECT_WPM_CHART
+#define DISABLE_TERRAZZO_EFFECT_DINO
+#define DISABLE_TERRAZZO_EFFECT_OUTRUN
+// #define DISABLE_TERRAZZO_EFFECT_PAC_DUDE
+// #define DISABLE_TERRAZZO_EFFECT_HEART
+#define DISABLE_TERRAZZO_EFFECT_WPM_CHART
 #define DISABLE_TERRAZZO_EFFECT_DOT

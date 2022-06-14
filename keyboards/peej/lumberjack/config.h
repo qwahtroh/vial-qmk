@@ -25,6 +25,9 @@
 #define MANUFACTURER Peej
 #define PRODUCT Lumberjack
 
+//#define VIAL_KEYBOARD_UID {0xD9, 0x81, 0x76, 0x96, 0xEE, 0x32, 0x5C, 0x9E}
+//#define DYNAMIC_KEYMAP_LAYER_COUNT 3
+
 /* key matrix size */
 #define MATRIX_ROWS 6
 #define MATRIX_COLS 10
